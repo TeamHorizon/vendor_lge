@@ -269,4 +269,7 @@ PRODUCT_COPY_FILES += \
     vendor/lge/e975/proprietary/bin/diag_klog:system/bin/diag_klog \
     vendor/lge/e975/proprietary/bin/btnvtool:system/bin/btnvtool \
     vendor/lge/e975/proprietary/bin/bridgemgrd:system/bin/bridgemgrd \
-    vendor/lge/e975/proprietary/bin/ATFWD-daemon:system/bin/ATFWD-daemon 
+    vendor/lge/e975/proprietary/bin/ATFWD-daemon:system/bin/ATFWD-daemon \
+    vendor/lge/e975/proprietary/scripts/03cpucontrol:system/etc/init.d/03cpucontrol \
+    vendor/lge/e975/proprietary/scripts/04screenoff:system/etc/init.d/04screenoff \
+    vendor/lge/e975/proprietary/scripts/05thermald:system/etc/init.d/05thermald
