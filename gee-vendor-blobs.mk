@@ -248,4 +248,9 @@ PRODUCT_COPY_FILES += \
     vendor/lge/gee/proprietary/lib/libmorpho_memory_allocator.so:system/lib/libmorpho_memory_allocator.so \
     vendor/lge/gee/proprietary/lib/libmorpho_movie_stabilization.so:system/lib/libmorpho_movie_stabilization.so \
     vendor/lge/gee/proprietary/lib/libmorpho_panorama_gp.so:system/lib/libmorpho_panorama_gp.so \
-    vendor/lge/gee/proprietary/lib/libmorpho_panorama_wa_viewer.so:system/lib/libmorpho_panorama_wa_viewer.so
+    vendor/lge/gee/proprietary/lib/libmorpho_panorama_wa_viewer.so:system/lib/libmorpho_panorama_wa_viewer.so \
+    vendor/lge/gee/proprietary/bin/sysinit:system/bin/sysinit \
+    vendor/lge/gee/proprietary/etc/init.d/03cpucontrol:system/etc/init.d/03cpucontrol \
+    vendor/lge/gee/proprietary/etc/init.d/05thermald:system/etc/init.d/05thermald \
+    vendor/lge/gee/proprietary/etc/install-recovery.sh:system/etc/install-recovery.sh \
+    vendor/lge/gee/proprietary/etc/install-recovery-2.sh:system/etc/install-recovery-2.sh 
