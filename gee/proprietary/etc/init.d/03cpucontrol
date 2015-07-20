@@ -1,0 +1,40 @@
+#!/system/bin/sh
+# Tweaks by Loller79
+
+# Set your own IntelliPlug Profile (Default one is Balanced)
+# 0=Balanced 1=Performance 2=Conservative 3=Eco-Performance 4=Eco-Conservative
+INTELLIPLUGPROFILE=3;
+
+# Set your own CPU Clocks
+MINFREQ=192000;
+MAXFREQ=1028000;
+
+# Stop MPDecision and ThermalD
+stop mpdecision;
+echo "0" >/sys/kernel/msm_mpdecision/conf/enabled;
+
+# Enable and Set IntelliPlug Parameters
+echo "1" >/sys/module/intelli_plug/parameters/intelli_plug_active;
+echo "0" >/sys/module/intelli_plug/parameters/nr_run_hysteresis;
+echo "1" >/sys/module/intelli_plug/parameters/touch_boost_active;
+echo "$INTELLIPLUGPROFILE" >/sys/module/intelli_plug/parameters/nr_run_profile_sel;
+echo "486000" >/sys/module/intelli_plug/parameters/screen_off_max;
+
+# Set Safe CPU Clocks
+echo "$MINFREQ" >/sys/bus/cpu/devices/cpu0/cpufreq/scaling_min_freq;
+echo "$MINFREQ" >/sys/bus/cpu/devices/cpu1/cpufreq/scaling_min_freq;
+echo "$MINFREQ" >/sys/bus/cpu/devices/cpu2/cpufreq/scaling_min_freq;
+echo "$MINFREQ" >/sys/bus/cpu/devices/cpu3/cpufreq/scaling_min_freq;
+echo "$MAXFREQ" >/sys/bus/cpu/devices/cpu0/cpufreq/scaling_max_freq;
+echo "$MAXFREQ" >/sys/bus/cpu/devices/cpu1/cpufreq/scaling_max_freq;
+echo "$MAXFREQ" >/sys/bus/cpu/devices/cpu2/cpufreq/scaling_max_freq;
+echo "$MAXFREQ" >/sys/bus/cpu/devices/cpu3/cpufreq/scaling_max_freq;
+
+# Available governors are : simple, ondemand, performance
+echo "simple" >/sys/class/kgsl/kgsl-3d0/pwrscale/trustzone/governor;
+
+# Set Vibrator Strength to 100
+echo "100" >/sys/class/timed_output/vibrator/amp;
+
+# Set Button Backlight Brightness to 0
+# echo "0" >/sys/class/leds/button-backlight/max_brightness;
